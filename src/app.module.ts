@@ -5,12 +5,14 @@ import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { BookModule } from './book/book.module';
 import { RouterModule } from '@nestjs/core';
+import { RentalsModule } from './rentals/rentals.module';
 
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://localhost:27017/library'),
     UserModule,
     BookModule,
+    RentalsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

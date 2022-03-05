@@ -8,7 +8,8 @@ import {
   Put,
 } from '@nestjs/common';
 import { BookService } from './book.service';
-import { BookDto } from './dto/book.dto';
+import { CreateBookDto } from './dto/create-book.dto';
+import { UpdateBookDto } from './dto/update-book.dto';
 import { Book } from './schemas/book.schema';
 
 @Controller('book')
@@ -16,7 +17,7 @@ export class BookController {
   constructor(private readonly bookService: BookService) {}
 
   @Post()
-  async create(@Body() bookDto: BookDto) {
+  async create(@Body() bookDto: CreateBookDto) {
     await this.bookService.create(bookDto);
   }
   @Get()
@@ -31,7 +32,7 @@ export class BookController {
   @Put(':id')
   async update(
     @Param('id') id: string,
-    @Body() bookDto: BookDto,
+    @Body() bookDto: UpdateBookDto,
   ): Promise<Book> {
     return this.bookService.update(id, bookDto);
   }

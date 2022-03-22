@@ -1,4 +1,4 @@
-export class UserDto {
+export class UpdateUserDto {
   readonly name: string;
   readonly code: string;
   readonly place: string;

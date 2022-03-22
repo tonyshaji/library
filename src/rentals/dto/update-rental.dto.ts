@@ -1,6 +1,6 @@
 import { PartialType } from '@nestjs/swagger';
 import { Book } from 'src/book/schemas/book.schema';
-import { User } from 'src/user/schemas/user.schema';
+import { User } from 'src/user/entities/user.entity';
 import { CreateRentalDto } from './create-rental.dto';
 
 export class UpdateRentalDto extends PartialType(CreateRentalDto) {
